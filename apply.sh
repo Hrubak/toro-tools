@@ -52,12 +52,12 @@ set -e
 
 ################ Apply Patches Below ####################
 
-repo start auto frameworks/base
-echo "REVERT: Revert GPS changes for now until issues are resolved."
-cdv frameworks/base
-git reset --hard
-git revert -n ddbadd0e3e37d37f6e3e657950b3f317228d5808 
-cdb
+#repo start auto frameworks/base
+#echo "REVERT: Revert GPS changes for now until issues are resolved."
+#cdv frameworks/base
+#git reset --hard
+#git revert -n ddbadd0e3e37d37f6e3e657950b3f317228d5808 
+#cdb
 
 repo start auto packages/apps/Settings
 echo "Settings: add battery bar (1/2)"
@@ -80,13 +80,6 @@ git reset --hard
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Trebuchet refs/changes/73/32873/1 && git cherry-pick FETCH_HEAD
 cdb
 
-#repo start auto vendor/cm
-#echo "Use jpegOptimized bootanimations"
-#cdv vendor/cm
-#git reset --hard
-#git fetch http://review.cyanogenmod.org/CyanogenMod/android_vendor_cm refs/changes/93/33593/1 && git cherry-pick FETCH_HEAD
-#cdb
-
 repo start auto packages/apps/Mms
 echo "Add quick emoji button next to text input"
 cdv packages/apps/Mms
@@ -94,12 +87,6 @@ git reset --hard
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Mms refs/changes/55/32455/1 && git cherry-pick FETCH_HEAD
 cdb
 
-#repo start auto packages/apps/Phone
-#echo "Make going to call log after call optional."
-#cdv packages/apps/Phone
-#git reset --hard
-#git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Phone refs/changes/21/33321/2 && git cherry-pick FETCH_HEAD
-#cdb
 
 ##### SUCCESS ####
 SUCCESS=true
